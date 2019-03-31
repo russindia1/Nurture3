@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 
 
@@ -21,6 +22,7 @@ class ChildViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     @IBOutlet weak var topicSelector: UIPickerView!
     
     var topicSelectorData: [String] = [String]()
+    var topicSelected: String = ""
         
     
     
@@ -33,6 +35,7 @@ class ChildViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     
     @IBAction func proceedButton(_ sender: Any) {
         // save data to firestore.
+        SaveChildDataToFireStore()
         
         // Proceed to home page.
         
@@ -46,6 +49,7 @@ class ChildViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
            topicSelectorData = ["Discipline", "Problem Solving"]
             self.topicSelector.delegate = self
             self.topicSelector.dataSource = self
+        
         
     }
     
@@ -71,5 +75,26 @@ class ChildViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
     return topicSelectorData[row]
     }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        topicSelected = topicSelectorData[row]
+    }
+    
+    func SaveChildDataToFireStore() {
+        let db = Firestore.firestore()
+        db.collection(userEmail).document("Child" + nameofChildText.text!).setData([
+            "name": nameofChildText.text!,
+            "DOB": childDOBSelector.date,
+            "category": topicSelected
+        ]) { err in
+            if let err = err {
+                print("Error writing document: \(err)")
+            } else {
+                print("Document successfully written!")
+            }
+        }
+    }
+    
+    
 }
 
