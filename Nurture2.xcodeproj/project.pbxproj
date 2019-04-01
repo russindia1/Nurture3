@@ -16,6 +16,7 @@
 		A7AB9C33224DBCF000D6D662 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7AB9C31224DBCF000D6D662 /* LaunchScreen.storyboard */; };
 		A7AB9C3B224DE98700D6D662 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A7AB9C3A224DE98700D6D662 /* GoogleService-Info.plist */; };
 		A7AB9C3D224E2B2A00D6D662 /* ChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AB9C3C224E2B2A00D6D662 /* ChildViewController.swift */; };
+		A7AB9C3F2251A4C300D6D662 /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AB9C3E2251A4C300D6D662 /* HomePageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		A7AB9C34224DBCF000D6D662 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A7AB9C3A224DE98700D6D662 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A7AB9C3C224E2B2A00D6D662 /* ChildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildViewController.swift; sourceTree = "<group>"; };
+		A7AB9C3E2251A4C300D6D662 /* HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 				A7AB9C27224DBCEC00D6D662 /* ViewController.swift */,
 				A7AB9C3C224E2B2A00D6D662 /* ChildViewController.swift */,
 				A7AB9C29224DBCEC00D6D662 /* Main.storyboard */,
+				A7AB9C3E2251A4C300D6D662 /* HomePageViewController.swift */,
 				A7AB9C2F224DBCF000D6D662 /* Assets.xcassets */,
 				A7AB9C31224DBCF000D6D662 /* LaunchScreen.storyboard */,
 				A7AB9C34224DBCF000D6D662 /* Info.plist */,
@@ -239,6 +242,7 @@
 				A7AB9C28224DBCEC00D6D662 /* ViewController.swift in Sources */,
 				A7AB9C2E224DBCEC00D6D662 /* Nurture2.xcdatamodeld in Sources */,
 				A7AB9C26224DBCEC00D6D662 /* AppDelegate.swift in Sources */,
+				A7AB9C3F2251A4C300D6D662 /* HomePageViewController.swift in Sources */,
 				A7AB9C3D224E2B2A00D6D662 /* ChildViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
