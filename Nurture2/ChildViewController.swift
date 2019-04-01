@@ -23,13 +23,19 @@ class ChildViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     
     var topicSelectorData: [String] = [String]()
     var topicSelected: String = ""
-        
+    
+
     
     
     @IBAction func addAnotherChildButton(_ sender: Any) {
         // save data to firestore.
-        
+        SaveChildDataToFireStore()
         //clear fields on screen.
+        nameofChildText.text = ""
+        topicSelector.reloadAllComponents()
+        //need to sort out date reset.
+      
+        
         
     }
     
