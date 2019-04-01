@@ -12,8 +12,8 @@ class HomePageViewController: UIViewController, UITableViewDelegate, UITableView
     
     var allTips = [[String]]()
     
-    var latestTip = ["Bread", "Milk", "Cheese", "Apples", "Oranges"]
-    var oldTips = ["Get lost", "Get stuffed", "Shout alot", "Cry your heart out", "This is test data"]
+    var latestTip = ["‘Pick your battles’ is common advice but which battles? Ask yourself - is this preventing my child from getting hurt? If the answer is yes, it is non-negotiable."]
+    var oldTips = ["Read aloud with your child everyday and do not stop until about age 13, when a child’s reading vocabulary catches up to their listening vocabulary.", "Get stuffed", "Shout alot", "Cry your heart out", "This is test data"]
     
 
   
@@ -35,7 +35,7 @@ class HomePageViewController: UIViewController, UITableViewDelegate, UITableView
         return(row)
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+ /*   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             let cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "homeCell")
       
         switch indexPath.section{
@@ -49,9 +49,26 @@ class HomePageViewController: UIViewController, UITableViewDelegate, UITableView
         }
         return(cell)
         
+        } */
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "homeCell", for: indexPath) as! TableViewCell
+        switch indexPath.section{
+            
+        case 0:
+            cell.cellLabel.text = allTips[0][indexPath.row]
+        case 1:
+            cell.cellLabel.text = allTips[1][indexPath.row]
+        default:
+            cell.cellLabel.text = allTips[1][indexPath.row]
         }
-    
-    
+     //   tableView.rowHeight = UITableView.automaticDimension
+     //   tableView.estimatedRowHeight = 600
+        return(cell)
+        
+        
+    }
+
     
     
     
@@ -109,6 +126,9 @@ class HomePageViewController: UIViewController, UITableViewDelegate, UITableView
         allTips.append(latestTip)
         allTips.append(oldTips)
         
+       
+        
+        
     //    homePageTable.register(HomePageCell.self, forCellReuseIdentifier: cellId)
         
    //     self.homePageTable.register(UITableViewCell.self, forCellReuseIdentifier: "UITableViewCell")
@@ -127,7 +147,8 @@ class HomePageViewController: UIViewController, UITableViewDelegate, UITableView
         
     }
     
-    
+
+
     
  /*   func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
